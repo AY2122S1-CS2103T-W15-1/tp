@@ -1,11 +1,10 @@
 package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.util.AppUtil.checkArgument;
 
 public class Remark {
 
-    public String value;
+    public final String value;
 
     /**
      * Constructs a {@code Name}.
