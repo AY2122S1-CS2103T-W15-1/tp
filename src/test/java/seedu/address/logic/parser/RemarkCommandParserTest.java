@@ -15,7 +15,10 @@ import seedu.address.model.person.Remark;
 public class RemarkCommandParserTest {
     private RemarkCommandParser parser = new RemarkCommandParser();
     private final String nonEmptyRemark = "Some remark.";
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     @Test
     public void parse_indexSpecified_success() {
         // have remark
@@ -33,10 +36,15 @@ public class RemarkCommandParserTest {
     @Test
     public void parse_missingCompulsoryField_failure() {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE);
+<<<<<<< Updated upstream
 
         // no parameters
         assertParseFailure(parser, RemarkCommand.COMMAND_WORD, expectedMessage);
 
+=======
+        // no parameters
+        assertParseFailure(parser, RemarkCommand.COMMAND_WORD, expectedMessage);
+>>>>>>> Stashed changes
         // no index
         assertParseFailure(parser, RemarkCommand.COMMAND_WORD + " " + nonEmptyRemark, expectedMessage);
     }

@@ -17,35 +17,52 @@ import seedu.address.model.person.Remark;
  * Changes the remark of an existing person in the address book.
  */
 public class RemarkCommand extends Command {
+<<<<<<< Updated upstream
 
     public static final String COMMAND_WORD = "remark";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Edits the remark of the person identified "
+=======
+    public static final String COMMAND_WORD = "remark";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the remark of the person identified "
+>>>>>>> Stashed changes
             + "by the index number used in the last person listing. "
             + "Existing remark will be overwritten by the input.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + PREFIX_REMARK + "[REMARK]\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_REMARK + "Likes to swim.";
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public static final String MESSAGE_ADD_REMARK_SUCCESS = "Added remark to Person: %1$s";
     public static final String MESSAGE_DELETE_REMARK_SUCCESS = "Removed remark from Person: %1$s";
 
     private final Index index;
     private final Remark remark;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     /**
      * @param index of the person in the filtered person list to edit the remark
      * @param remark of the person to be updated to
      */
     public RemarkCommand(Index index, Remark remark) {
         requireAllNonNull(index, remark);
+<<<<<<< Updated upstream
 
         this.index = index;
         this.remark = remark;
     }
 
+=======
+        this.index = index;
+        this.remark = remark;
+    }
+>>>>>>> Stashed changes
     @Override
     public CommandResult execute(Model model) throws CommandException {
         List<Person> lastShownList = model.getFilteredPersonList();
@@ -55,8 +72,12 @@ public class RemarkCommand extends Command {
         }
 
         Person personToEdit = lastShownList.get(index.getZeroBased());
+<<<<<<< Updated upstream
         Person editedPerson = new Person(
                 personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
+=======
+        Person editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
+>>>>>>> Stashed changes
                 personToEdit.getAddress(), remark, personToEdit.getTags());
 
         model.setPerson(personToEdit, editedPerson);
@@ -66,8 +87,12 @@ public class RemarkCommand extends Command {
     }
 
     /**
+<<<<<<< Updated upstream
      * Generates a command execution success message based on whether
      * the remark is added to or removed from
+=======
+     * Generates a command execution success message based on whether the remark is added to or removed from
+>>>>>>> Stashed changes
      * {@code personToEdit}.
      */
     private String generateSuccessMessage(Person personToEdit) {
@@ -81,12 +106,18 @@ public class RemarkCommand extends Command {
         if (other == this) {
             return true;
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         // instanceof handles nulls
         if (!(other instanceof RemarkCommand)) {
             return false;
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         // state check
         RemarkCommand e = (RemarkCommand) other;
         return index.equals(e.index)

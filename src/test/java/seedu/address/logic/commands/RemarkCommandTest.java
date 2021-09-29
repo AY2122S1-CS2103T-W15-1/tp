@@ -1,6 +1,13 @@
 package seedu.address.logic.commands;
+<<<<<<< Updated upstream
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+=======
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+>>>>>>> Stashed changes
 import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_REMARK_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
@@ -52,7 +59,11 @@ public class RemarkCommandTest {
         Person editedPerson = new PersonBuilder(firstPerson).withRemark("").build();
 
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON,
+<<<<<<< Updated upstream
         new Remark(editedPerson.getRemark().toString()));
+=======
+                new Remark(editedPerson.getRemark().toString()));
+>>>>>>> Stashed changes
 
         String expectedMessage = String.format(RemarkCommand.MESSAGE_DELETE_REMARK_SUCCESS, editedPerson);
 
@@ -68,7 +79,11 @@ public class RemarkCommandTest {
 
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
         Person editedPerson = new PersonBuilder(model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()))
+<<<<<<< Updated upstream
         .withRemark(REMARK_STUB).build();
+=======
+                .withRemark(REMARK_STUB).build();
+>>>>>>> Stashed changes
 
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(editedPerson.getRemark().value));
 
@@ -100,6 +115,10 @@ public class RemarkCommandTest {
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getPersonList().size());
 
         RemarkCommand remarkCommand = new RemarkCommand(outOfBoundIndex, new Remark(VALID_REMARK_BOB));
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         assertCommandFailure(remarkCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
     }
 
@@ -107,11 +126,15 @@ public class RemarkCommandTest {
     public void equals() {
         final RemarkCommand standardCommand = new RemarkCommand(INDEX_FIRST_PERSON,
                 new Remark(VALID_REMARK_AMY));
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         // same values -> returns true
         RemarkCommand commandWithSameValues = new RemarkCommand(INDEX_FIRST_PERSON,
                 new Remark(VALID_REMARK_AMY));
         assertTrue(standardCommand.equals(commandWithSameValues));
+<<<<<<< Updated upstream
 
         // same object -> returns true
         assertTrue(standardCommand.equals(standardCommand));
@@ -126,6 +149,17 @@ public class RemarkCommandTest {
         assertFalse(standardCommand.equals(new RemarkCommand(INDEX_SECOND_PERSON,
                 new Remark(VALID_REMARK_AMY))));
 
+=======
+        // same object -> returns true
+        assertTrue(standardCommand.equals(standardCommand));
+        // null -> returns false
+        assertFalse(standardCommand.equals(null));
+        // different types -> returns false
+        assertFalse(standardCommand.equals(new ClearCommand()));
+        // different index -> returns false
+        assertFalse(standardCommand.equals(new RemarkCommand(INDEX_SECOND_PERSON,
+                new Remark(VALID_REMARK_AMY))));
+>>>>>>> Stashed changes
         // different remark -> returns false
         assertFalse(standardCommand.equals(new RemarkCommand(INDEX_FIRST_PERSON,
                 new Remark(VALID_REMARK_BOB))));
