@@ -1,7 +1,7 @@
 package classmate.model;
 
-import static java.util.Objects.requireNonNull;
 import static classmate.commons.util.CollectionUtil.requireAllNonNull;
+import static java.util.Objects.requireNonNull;
 
 import java.nio.file.Path;
 import java.util.function.Predicate;
@@ -11,9 +11,9 @@ import classmate.commons.core.GuiSettings;
 import classmate.commons.core.LogsCenter;
 import classmate.commons.util.CollectionUtil;
 import classmate.model.student.Student;
+import classmate.model.tutorialclass.TutorialClass;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import classmate.model.tutorialclass.TutorialClass;
 
 /**
  * Represents the in-memory model of ClassMATE data.

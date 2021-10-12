@@ -2,13 +2,13 @@ package classmate.ui;
 
 import java.util.logging.Logger;
 
+import classmate.commons.core.LogsCenter;
 import classmate.model.student.Student;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
-import classmate.commons.core.LogsCenter;
 
 /**
  * Panel containing the list of students.

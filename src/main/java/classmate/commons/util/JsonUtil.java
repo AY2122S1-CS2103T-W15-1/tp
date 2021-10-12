@@ -9,6 +9,9 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import classmate.commons.core.LogsCenter;
+import classmate.commons.exceptions.DataConversionException;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,8 +23,8 @@ import com.fasterxml.jackson.databind.deser.std.FromStringDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
-import classmate.commons.exceptions.DataConversionException;
-import classmate.commons.core.LogsCenter;
+
+
 
 /**
  * Converts a Java object instance to JSON and vice versa

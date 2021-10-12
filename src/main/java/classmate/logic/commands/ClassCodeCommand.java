@@ -4,13 +4,12 @@ import static classmate.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.List;
 
-import classmate.model.student.Student;
 import classmate.commons.core.Messages;
 import classmate.commons.core.index.Index;
 import classmate.logic.commands.exceptions.CommandException;
 import classmate.model.Model;
 import classmate.model.student.ClassCode;
-
+import classmate.model.student.Student;
 
 public class ClassCodeCommand extends Command {
 

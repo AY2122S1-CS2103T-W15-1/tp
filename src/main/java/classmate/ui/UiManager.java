@@ -2,15 +2,15 @@ package classmate.ui;
 
 import java.util.logging.Logger;
 
+import classmate.commons.core.LogsCenter;
 import classmate.commons.util.StringUtil;
 import classmate.logic.Logic;
+import classmate.MainApp;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import classmate.MainApp;
-import classmate.commons.core.LogsCenter;
 
 /**
  * The manager of the UI component.

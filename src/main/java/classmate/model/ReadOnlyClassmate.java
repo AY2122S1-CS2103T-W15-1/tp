@@ -1,9 +1,8 @@
 package classmate.model;
 
 import classmate.model.student.Student;
+import classmate.model.tutorialclass.TutorialClass; //import TutorialClass;
 import javafx.collections.ObservableList;
-import classmate.model.tutorialclass.TutorialClass;
-//import TutorialClass;
 
 /**
  * Unmodifiable view of ClassMATE

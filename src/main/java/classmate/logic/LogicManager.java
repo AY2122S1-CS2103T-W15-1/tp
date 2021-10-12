@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.logging.Logger;
 
-import classmate.model.student.Student;
-import classmate.storage.Storage;
-import javafx.collections.ObservableList;
 import classmate.commons.core.GuiSettings;
 import classmate.commons.core.LogsCenter;
 import classmate.logic.commands.Command;
@@ -16,7 +13,11 @@ import classmate.logic.parser.ClassmateParser;
 import classmate.logic.parser.exceptions.ParseException;
 import classmate.model.Model;
 import classmate.model.ReadOnlyClassmate;
+import classmate.model.student.Student;
 import classmate.model.tutorialclass.TutorialClass;
+import classmate.storage.Storage;
+
+import javafx.collections.ObservableList;
 
 /**
  * The main LogicManager of the app.

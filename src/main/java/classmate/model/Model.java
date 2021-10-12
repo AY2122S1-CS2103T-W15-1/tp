@@ -5,8 +5,8 @@ import java.util.function.Predicate;
 
 import classmate.commons.core.GuiSettings;
 import classmate.model.student.Student;
-import javafx.collections.ObservableList;
 import classmate.model.tutorialclass.TutorialClass;
+import javafx.collections.ObservableList;
 
 /**
  * The API of the Model component.

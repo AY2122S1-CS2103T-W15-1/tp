@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Optional;
 
-import classmate.commons.exceptions.DataConversionException;
 import classmate.commons.core.Config;
+import classmate.commons.exceptions.DataConversionException;
 
 /**
  * A class for accessing the Config File.

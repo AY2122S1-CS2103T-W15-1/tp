@@ -1,12 +1,12 @@
 package classmate.logic.commands;
 
-import static java.util.Objects.requireNonNull;
 import static classmate.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static classmate.logic.parser.CliSyntax.PREFIX_CLASSCODE;
 import static classmate.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static classmate.logic.parser.CliSyntax.PREFIX_NAME;
 import static classmate.logic.parser.CliSyntax.PREFIX_PHONE;
 import static classmate.logic.parser.CliSyntax.PREFIX_TAG;
+import static java.util.Objects.requireNonNull;
 
 import java.util.Collections;
 import java.util.HashSet;

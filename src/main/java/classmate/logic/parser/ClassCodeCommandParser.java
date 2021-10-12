@@ -1,12 +1,12 @@
 package classmate.logic.parser;
 
-import static java.util.Objects.requireNonNull;
 import static classmate.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static classmate.logic.parser.CliSyntax.PREFIX_CLASSCODE;
+import static java.util.Objects.requireNonNull;
 
-import classmate.logic.commands.ClassCodeCommand;
 import classmate.commons.core.index.Index;
 import classmate.commons.exceptions.IllegalValueException;
+import classmate.logic.commands.ClassCodeCommand;
 import classmate.logic.parser.exceptions.ParseException;
 import classmate.model.student.ClassCode;
 

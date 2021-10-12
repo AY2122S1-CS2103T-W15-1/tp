@@ -4,21 +4,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import classmate.commons.core.Messages;
+import classmate.logic.commands.AddClassCommand;
+import classmate.logic.commands.AddStudentCommand;
 import classmate.logic.commands.ClassCodeCommand;
 import classmate.logic.commands.ClearCommand;
 import classmate.logic.commands.Command;
-import classmate.logic.commands.EditCommand;
-import classmate.logic.commands.ExitCommand;
-import classmate.logic.commands.HelpCommand;
-import classmate.logic.parser.exceptions.ParseException;
-import classmate.logic.commands.AddClassCommand;
-import classmate.logic.commands.AddStudentCommand;
 import classmate.logic.commands.DeleteClassCommand;
 import classmate.logic.commands.DeleteStudentCommand;
+import classmate.logic.commands.EditCommand;
+import classmate.logic.commands.ExitCommand;
 import classmate.logic.commands.FindStudentCommand;
+import classmate.logic.commands.HelpCommand;
 import classmate.logic.commands.ListClassCommand;
 import classmate.logic.commands.ListStudentCommand;
 import classmate.logic.commands.ViewStudentCommand;
+import classmate.logic.parser.exceptions.ParseException;
 
 /**
  * Parses user input.

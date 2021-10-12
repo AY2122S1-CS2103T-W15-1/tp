@@ -1,15 +1,15 @@
 package classmate.model.student;
 
-import static java.util.Objects.requireNonNull;
 import static classmate.commons.util.CollectionUtil.requireAllNonNull;
+import static java.util.Objects.requireNonNull;
 
 import java.util.Iterator;
 import java.util.List;
 
+import classmate.model.student.exceptions.DuplicateStudentException;
 import classmate.model.student.exceptions.StudentNotFoundException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import classmate.model.student.exceptions.DuplicateStudentException;
 
 /**
  * A list of students that enforces uniqueness between its elements and does not allow nulls.

@@ -6,9 +6,9 @@ import java.util.List;
 
 import classmate.model.student.Student;
 import classmate.model.student.UniqueStudentList;
-import javafx.collections.ObservableList;
 import classmate.model.tutorialclass.TutorialClass;
 import classmate.model.tutorialclass.UniqueTutorialClassList;
+import javafx.collections.ObservableList;
 
 /**
  * Wraps all data at the address-book level

@@ -4,7 +4,10 @@ import java.util.logging.Logger;
 
 import classmate.commons.core.GuiSettings;
 import classmate.commons.core.LogsCenter;
+import classmate.logic.commands.CommandResult;
+import classmate.logic.commands.exceptions.CommandException;
 import classmate.logic.Logic;
+import classmate.logic.parser.exceptions.ParseException;
 import classmate.model.student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,9 +17,6 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import classmate.logic.commands.CommandResult;
-import classmate.logic.commands.exceptions.CommandException;
-import classmate.logic.parser.exceptions.ParseException;
 
 /**
  * The Main Window. Provides the basic application layout containing

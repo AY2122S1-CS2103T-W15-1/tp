@@ -21,8 +21,6 @@ import classmate.storage.StorageManager;
 import classmate.storage.UserPrefsStorage;
 import classmate.ui.Ui;
 import classmate.ui.UiManager;
-import javafx.application.Application;
-import javafx.stage.Stage;
 import classmate.model.Model;
 import classmate.model.ModelManager;
 import classmate.model.ReadOnlyUserPrefs;
@@ -30,6 +28,9 @@ import classmate.model.UserPrefs;
 import classmate.model.util.SampleDataUtil;
 import classmate.storage.ClassmateStorage;
 import classmate.storage.JsonClassmateStorage;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
 
 /**
  * Runs the application.

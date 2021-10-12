@@ -1,7 +1,7 @@
 package classmate.model.student;
 
-import static java.util.Objects.requireNonNull;
 import static classmate.commons.util.AppUtil.checkArgument;
+import static java.util.Objects.requireNonNull;
 
 /**
  * Represents a Student's address in the classmate.

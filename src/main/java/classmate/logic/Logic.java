@@ -2,15 +2,16 @@ package classmate.logic;
 
 import java.nio.file.Path;
 
-import classmate.model.Model;
-import classmate.model.student.Student;
-import javafx.collections.ObservableList;
 import classmate.commons.core.GuiSettings;
 import classmate.logic.commands.CommandResult;
 import classmate.logic.commands.exceptions.CommandException;
 import classmate.logic.parser.exceptions.ParseException;
+import classmate.model.Model;
 import classmate.model.ReadOnlyClassmate;
+import classmate.model.student.Student;
 import classmate.model.tutorialclass.TutorialClass;
+
+import javafx.collections.ObservableList;
 
 /**
  * API of the Logic component
