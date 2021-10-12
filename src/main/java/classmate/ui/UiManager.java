@@ -2,9 +2,9 @@ package classmate.ui;
 
 import java.util.logging.Logger;
 
+import classmate.MainApp;
 import classmate.commons.core.LogsCenter;
 import classmate.commons.util.StringUtil;
-import classmate.MainApp;
 import classmate.logic.Logic;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
