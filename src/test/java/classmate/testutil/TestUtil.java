@@ -6,8 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import classmate.commons.core.index.Index;
-import classmate.model.student.Student;
 import classmate.model.Model;
+import classmate.model.student.Student;
 
 /**
  * A utility class for test cases.

@@ -8,8 +8,8 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import classmate.commons.core.Messages;
-import classmate.model.student.NameContainsKeywordsPredicate;
 import classmate.logic.commands.FindStudentCommand;
+import classmate.model.student.NameContainsKeywordsPredicate;
 
 
 public class FindStudentCommandParserTest {

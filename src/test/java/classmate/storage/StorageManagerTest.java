@@ -1,8 +1,8 @@
 package classmate.storage;
 
+import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 
 import java.nio.file.Path;
 

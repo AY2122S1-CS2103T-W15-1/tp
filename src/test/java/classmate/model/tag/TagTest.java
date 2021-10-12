@@ -1,7 +1,5 @@
 package classmate.model.tag;
 
-import static classmate.testutil.Assert.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
 import classmate.testutil.Assert;

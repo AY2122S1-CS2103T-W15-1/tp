@@ -31,13 +31,13 @@ import static classmate.testutil.TypicalStudents.BOB;
 import org.junit.jupiter.api.Test;
 
 import classmate.commons.core.Messages;
+import classmate.logic.commands.AddStudentCommand;
 import classmate.model.student.Address;
 import classmate.model.student.Email;
 import classmate.model.student.Name;
 import classmate.model.student.Phone;
 import classmate.model.student.Student;
 import classmate.model.tag.Tag;
-import classmate.logic.commands.AddStudentCommand;
 import classmate.testutil.StudentBuilder;
 
 public class AddStudentCommandParserTest {
@@ -84,7 +84,8 @@ public class AddStudentCommandParserTest {
 
     @Test
     public void parse_compulsoryFieldMissing_failure() {
-        String expectedMessage = String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, AddStudentCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT,
+                AddStudentCommand.MESSAGE_USAGE);
 
         // missing name prefix
         assertParseFailure(parser, VALID_NAME_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB,

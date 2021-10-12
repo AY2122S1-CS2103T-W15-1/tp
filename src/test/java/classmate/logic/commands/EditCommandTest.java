@@ -1,9 +1,8 @@
 package classmate.logic.commands;
 
+import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,9 +13,9 @@ import classmate.model.Model;
 import classmate.model.ModelManager;
 import classmate.model.UserPrefs;
 import classmate.model.student.Student;
-import classmate.testutil.TypicalIndexes;
 import classmate.testutil.EditStudentDescriptorBuilder;
 import classmate.testutil.StudentBuilder;
+import classmate.testutil.TypicalIndexes;
 
 /**
  * Contains integration tests (interaction with the Model) and unit tests for EditCommand.
@@ -45,11 +44,13 @@ public class EditCommandTest {
         Student lastStudent = model.getFilteredStudentList().get(indexLastStudent.getZeroBased());
 
         StudentBuilder studentInList = new StudentBuilder(lastStudent);
-        Student editedStudent = studentInList.withName(CommandTestUtil.VALID_NAME_BOB).withPhone(CommandTestUtil.VALID_PHONE_BOB)
+        Student editedStudent = studentInList.withName(CommandTestUtil.VALID_NAME_BOB)
+                .withPhone(CommandTestUtil.VALID_PHONE_BOB)
                 .withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
 
-        EditCommand.EditStudentDescriptor descriptor = new EditStudentDescriptorBuilder().withName(CommandTestUtil.VALID_NAME_BOB)
-                .withPhone(CommandTestUtil.VALID_PHONE_BOB).withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
+        EditCommand.EditStudentDescriptor descriptor = new EditStudentDescriptorBuilder()
+                .withName(CommandTestUtil.VALID_NAME_BOB).withPhone(CommandTestUtil.VALID_PHONE_BOB)
+                .withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
         EditCommand editCommand = new EditCommand(indexLastStudent, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STUDENT_SUCCESS, editedStudent);
@@ -62,7 +63,8 @@ public class EditCommandTest {
 
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-        EditCommand editCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT, new EditCommand.EditStudentDescriptor());
+        EditCommand editCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT,
+                new EditCommand.EditStudentDescriptor());
         Student editedStudent = model.getFilteredStudentList().get(TypicalIndexes.INDEX_FIRST_STUDENT.getZeroBased());
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_STUDENT_SUCCESS, editedStudent);
@@ -76,8 +78,10 @@ public class EditCommandTest {
     public void execute_filteredList_success() {
         CommandTestUtil.showStudentAtIndex(model, TypicalIndexes.INDEX_FIRST_STUDENT);
 
-        Student studentInFilteredList = model.getFilteredStudentList().get(TypicalIndexes.INDEX_FIRST_STUDENT.getZeroBased());
-        Student editedStudent = new StudentBuilder(studentInFilteredList).withName(CommandTestUtil.VALID_NAME_BOB).build();
+        Student studentInFilteredList = model.getFilteredStudentList()
+                .get(TypicalIndexes.INDEX_FIRST_STUDENT.getZeroBased());
+        Student editedStudent = new StudentBuilder(studentInFilteredList)
+                .withName(CommandTestUtil.VALID_NAME_BOB).build();
         EditCommand editCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT,
                 new EditStudentDescriptorBuilder().withName(CommandTestUtil.VALID_NAME_BOB).build());
 
@@ -103,7 +107,8 @@ public class EditCommandTest {
         CommandTestUtil.showStudentAtIndex(model, TypicalIndexes.INDEX_FIRST_STUDENT);
 
         // edit student in filtered list into a duplicate in ClassMATE
-        Student studentInList = model.getClassmate().getStudentList().get(TypicalIndexes.INDEX_SECOND_STUDENT.getZeroBased());
+        Student studentInList = model.getClassmate().getStudentList()
+                .get(TypicalIndexes.INDEX_SECOND_STUDENT.getZeroBased());
         EditCommand editCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT,
                 new EditStudentDescriptorBuilder(studentInList).build());
 
@@ -139,10 +144,12 @@ public class EditCommandTest {
 
     @Test
     public void equals() {
-        final EditCommand standardCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT, CommandTestUtil.DESC_AMY);
+        final EditCommand standardCommand = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT,
+                CommandTestUtil.DESC_AMY);
 
         // same values -> returns true
-        EditCommand.EditStudentDescriptor copyDescriptor = new EditCommand.EditStudentDescriptor(CommandTestUtil.DESC_AMY);
+        EditCommand.EditStudentDescriptor copyDescriptor = new EditCommand
+                .EditStudentDescriptor(CommandTestUtil.DESC_AMY);
         EditCommand commandWithSameValues = new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT, copyDescriptor);
         assertTrue(standardCommand.equals(commandWithSameValues));
 
@@ -156,10 +163,12 @@ public class EditCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(TypicalIndexes.INDEX_SECOND_STUDENT, CommandTestUtil.DESC_AMY)));
+        assertFalse(standardCommand.equals(new EditCommand(TypicalIndexes.INDEX_SECOND_STUDENT,
+                CommandTestUtil.DESC_AMY)));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT, CommandTestUtil.DESC_BOB)));
+        assertFalse(standardCommand.equals(new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT,
+                CommandTestUtil.DESC_BOB)));
     }
 
 }

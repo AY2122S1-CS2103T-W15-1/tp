@@ -1,13 +1,12 @@
 package classmate.model;
 
+import static classmate.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
+import static classmate.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static classmate.testutil.TypicalStudents.ALICE;
+import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static classmate.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static classmate.testutil.Assert.assertThrows;
-import static classmate.testutil.TypicalStudents.ALICE;
-import static classmate.testutil.TypicalStudents.getTypicalClassmate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,11 +18,11 @@ import org.junit.jupiter.api.Test;
 
 import classmate.model.student.Student;
 import classmate.model.student.exceptions.DuplicateStudentException;
+import classmate.model.tutorialclass.TutorialClass;
 import classmate.testutil.Assert;
+import classmate.testutil.StudentBuilder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import classmate.model.tutorialclass.TutorialClass;
-import classmate.testutil.StudentBuilder;
 
 public class ClassmateTest {
 

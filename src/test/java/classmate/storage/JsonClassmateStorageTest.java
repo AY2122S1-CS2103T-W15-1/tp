@@ -1,12 +1,11 @@
 package classmate.storage;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static classmate.testutil.Assert.assertThrows;
 import static classmate.testutil.TypicalStudents.ALICE;
 import static classmate.testutil.TypicalStudents.HOON;
 import static classmate.testutil.TypicalStudents.IDA;
 import static classmate.testutil.TypicalStudents.getTypicalClassmate;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.io.IOException;
 import java.nio.file.Path;

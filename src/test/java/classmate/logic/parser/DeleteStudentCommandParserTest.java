@@ -6,8 +6,8 @@ import static classmate.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import org.junit.jupiter.api.Test;
 
 import classmate.commons.core.Messages;
-import classmate.testutil.TypicalIndexes;
 import classmate.logic.commands.DeleteStudentCommand;
+import classmate.testutil.TypicalIndexes;
 
 /**
  * As we are only doing white-box testing, our test cases do not cover path variations

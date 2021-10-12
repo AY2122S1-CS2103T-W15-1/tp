@@ -4,7 +4,6 @@ import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.testutil.Assert.assertThrows;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -20,10 +19,10 @@ import classmate.model.Model;
 import classmate.model.ReadOnlyClassmate;
 import classmate.model.ReadOnlyUserPrefs;
 import classmate.model.student.Student;
-import classmate.testutil.Assert;
-import javafx.collections.ObservableList;
 import classmate.model.tutorialclass.TutorialClass;
+import classmate.testutil.Assert;
 import classmate.testutil.StudentBuilder;
+import javafx.collections.ObservableList;
 
 public class AddStudentCommandTest {
 

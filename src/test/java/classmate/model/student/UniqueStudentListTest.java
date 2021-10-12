@@ -3,7 +3,6 @@ package classmate.model.student;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.testutil.Assert.assertThrows;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,8 +40,8 @@ public class UniqueStudentListTest {
     @Test
     public void contains_studentWithSameIdentityFieldsInList_returnsTrue() {
         uniqueStudentList.add(TypicalStudents.ALICE);
-        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withAddress(CommandTestUtil.VALID_ADDRESS_BOB).withTags(CommandTestUtil.VALID_TAG_HUSBAND)
-                .build();
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withAddress(CommandTestUtil.VALID_ADDRESS_BOB)
+                .withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
         assertTrue(uniqueStudentList.contains(editedAlice));
     }
 
@@ -59,17 +58,20 @@ public class UniqueStudentListTest {
 
     @Test
     public void setStudent_nullTargetStudent_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> uniqueStudentList.setStudent(null, TypicalStudents.ALICE));
+        Assert.assertThrows(NullPointerException.class, () -> uniqueStudentList
+                .setStudent(null, TypicalStudents.ALICE));
     }
 
     @Test
     public void setStudent_nullEditedStudent_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> uniqueStudentList.setStudent(TypicalStudents.ALICE, null));
+        Assert.assertThrows(NullPointerException.class, () -> uniqueStudentList
+                .setStudent(TypicalStudents.ALICE, null));
     }
 
     @Test
     public void setStudent_targetStudentNotInList_throwsStudentNotFoundException() {
-        Assert.assertThrows(StudentNotFoundException.class, () -> uniqueStudentList.setStudent(TypicalStudents.ALICE, TypicalStudents.ALICE));
+        Assert.assertThrows(StudentNotFoundException.class, () -> uniqueStudentList
+                .setStudent(TypicalStudents.ALICE, TypicalStudents.ALICE));
     }
 
     @Test
@@ -84,8 +86,8 @@ public class UniqueStudentListTest {
     @Test
     public void setStudent_editedStudentHasSameIdentity_success() {
         uniqueStudentList.add(TypicalStudents.ALICE);
-        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withAddress(CommandTestUtil.VALID_ADDRESS_BOB).withTags(CommandTestUtil.VALID_TAG_HUSBAND)
-                .build();
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withAddress(CommandTestUtil.VALID_ADDRESS_BOB)
+                .withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
         uniqueStudentList.setStudent(TypicalStudents.ALICE, editedAlice);
         UniqueStudentList expectedUniqueStudentList = new UniqueStudentList();
         expectedUniqueStudentList.add(editedAlice);
@@ -105,7 +107,8 @@ public class UniqueStudentListTest {
     public void setStudent_editedStudentHasNonUniqueIdentity_throwsDuplicateStudentException() {
         uniqueStudentList.add(TypicalStudents.ALICE);
         uniqueStudentList.add(TypicalStudents.BOB);
-        Assert.assertThrows(DuplicateStudentException.class, () -> uniqueStudentList.setStudent(TypicalStudents.ALICE, TypicalStudents.BOB));
+        Assert.assertThrows(DuplicateStudentException.class, () -> uniqueStudentList
+                .setStudent(TypicalStudents.ALICE, TypicalStudents.BOB));
     }
 
     @Test
@@ -158,7 +161,8 @@ public class UniqueStudentListTest {
     @Test
     public void setStudents_listWithDuplicateStudents_throwsDuplicateStudentException() {
         List<Student> listWithDuplicateStudents = Arrays.asList(TypicalStudents.ALICE, TypicalStudents.ALICE);
-        Assert.assertThrows(DuplicateStudentException.class, () -> uniqueStudentList.setStudents(listWithDuplicateStudents));
+        Assert.assertThrows(DuplicateStudentException.class, () -> uniqueStudentList
+                .setStudents(listWithDuplicateStudents));
     }
 
     @Test

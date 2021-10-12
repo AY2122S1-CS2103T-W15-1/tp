@@ -1,9 +1,5 @@
 package classmate.model.student;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.testutil.Assert.assertThrows;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -29,8 +25,9 @@ public class StudentTest {
         Assertions.assertFalse(TypicalStudents.ALICE.isSameStudent(null));
 
         // same name, all other attributes different -> returns true
-        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withPhone(CommandTestUtil.VALID_PHONE_BOB).withEmail(CommandTestUtil.VALID_EMAIL_BOB)
-                .withAddress(CommandTestUtil.VALID_ADDRESS_BOB).withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withPhone(CommandTestUtil.VALID_PHONE_BOB)
+                .withEmail(CommandTestUtil.VALID_EMAIL_BOB).withAddress(CommandTestUtil.VALID_ADDRESS_BOB)
+                .withTags(CommandTestUtil.VALID_TAG_HUSBAND).build();
         Assertions.assertTrue(TypicalStudents.ALICE.isSameStudent(editedAlice));
 
         // different name, all other attributes same -> returns false
@@ -38,7 +35,8 @@ public class StudentTest {
         Assertions.assertFalse(TypicalStudents.ALICE.isSameStudent(editedAlice));
 
         // name differs in case, all other attributes same -> returns false
-        Student editedBob = new StudentBuilder(TypicalStudents.BOB).withName(CommandTestUtil.VALID_NAME_BOB.toLowerCase()).build();
+        Student editedBob = new StudentBuilder(TypicalStudents.BOB).withName(CommandTestUtil.VALID_NAME_BOB
+                .toLowerCase()).build();
         Assertions.assertFalse(TypicalStudents.BOB.isSameStudent(editedBob));
 
         // name has trailing spaces, all other attributes same -> returns false
@@ -66,7 +64,8 @@ public class StudentTest {
         Assertions.assertFalse(TypicalStudents.ALICE.equals(TypicalStudents.BOB));
 
         // different name -> returns false
-        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE).withName(CommandTestUtil.VALID_NAME_BOB).build();
+        Student editedAlice = new StudentBuilder(TypicalStudents.ALICE)
+                .withName(CommandTestUtil.VALID_NAME_BOB).build();
         Assertions.assertFalse(TypicalStudents.ALICE.equals(editedAlice));
 
         // different phone -> returns false

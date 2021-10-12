@@ -2,7 +2,6 @@ package classmate.logic.parser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.testutil.Assert.assertThrows;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,10 +22,10 @@ import classmate.logic.parser.exceptions.ParseException;
 import classmate.model.student.NameContainsKeywordsPredicate;
 import classmate.model.student.Student;
 import classmate.testutil.Assert;
-import classmate.testutil.TypicalIndexes;
 import classmate.testutil.EditStudentDescriptorBuilder;
 import classmate.testutil.StudentBuilder;
 import classmate.testutil.StudentUtil;
+import classmate.testutil.TypicalIndexes;
 
 public class ClassmateParserTest {
 
@@ -58,7 +57,8 @@ public class ClassmateParserTest {
         Student student = new StudentBuilder().build();
         EditCommand.EditStudentDescriptor descriptor = new EditStudentDescriptorBuilder(student).build();
         EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
-                + TypicalIndexes.INDEX_FIRST_STUDENT.getOneBased() + " " + StudentUtil.getEditStudentDescriptorDetails(descriptor));
+                + TypicalIndexes.INDEX_FIRST_STUDENT.getOneBased() + " "
+                + StudentUtil.getEditStudentDescriptorDetails(descriptor));
         assertEquals(new EditCommand(TypicalIndexes.INDEX_FIRST_STUDENT, descriptor), command);
     }
 
@@ -72,7 +72,8 @@ public class ClassmateParserTest {
     public void parseCommand_find() throws Exception {
         List<String> keywords = Arrays.asList("foo", "bar", "baz");
         FindStudentCommand command = (FindStudentCommand) parser.parseCommand(
-                FindStudentCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
+                FindStudentCommand.COMMAND_WORD + " "
+                        + keywords.stream().collect(Collectors.joining(" ")));
         assertEquals(new FindStudentCommand(new NameContainsKeywordsPredicate(keywords)), command);
     }
 
@@ -90,12 +91,13 @@ public class ClassmateParserTest {
 
     @Test
     public void parseCommand_unrecognisedInput_throwsParseException() {
-        Assert.assertThrows(ParseException.class, String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE), ()
-            -> parser.parseCommand(""));
+        Assert.assertThrows(ParseException.class, String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT,
+                HelpCommand.MESSAGE_USAGE), () -> parser.parseCommand(""));
     }
 
     @Test
     public void parseCommand_unknownCommand_throwsParseException() {
-        Assert.assertThrows(ParseException.class, Messages.MESSAGE_UNKNOWN_COMMAND, () -> parser.parseCommand("unknownCommand"));
+        Assert.assertThrows(ParseException.class, Messages.MESSAGE_UNKNOWN_COMMAND, () -> parser.parseCommand(
+                "unknownCommand"));
     }
 }

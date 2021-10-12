@@ -1,8 +1,7 @@
 package classmate.storage;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static classmate.testutil.Assert.assertThrows;
 import static classmate.testutil.TypicalStudents.BENSON;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +51,8 @@ public class JsonAdaptedStudentTest {
     public void toModelType_nullName_throwsIllegalValueException() {
         JsonAdaptedStudent student = new JsonAdaptedStudent(null, VALID_PHONE, VALID_EMAIL, VALID_ADDRESS,
                 VALID_CLASSCODE, VALID_TAGS);
-        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
+        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT,
+                Name.class.getSimpleName());
         Assert.assertThrows(IllegalValueException.class, expectedMessage, student::toModelType);
     }
 
@@ -69,7 +69,8 @@ public class JsonAdaptedStudentTest {
     public void toModelType_nullPhone_throwsIllegalValueException() {
         JsonAdaptedStudent student = new JsonAdaptedStudent(VALID_NAME, null, VALID_EMAIL,
                 VALID_ADDRESS, VALID_CLASSCODE, VALID_TAGS);
-        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName());
+        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT,
+                Phone.class.getSimpleName());
         Assert.assertThrows(IllegalValueException.class, expectedMessage, student::toModelType);
     }
 
@@ -86,7 +87,8 @@ public class JsonAdaptedStudentTest {
     public void toModelType_nullEmail_throwsIllegalValueException() {
         JsonAdaptedStudent student = new JsonAdaptedStudent(VALID_NAME, VALID_PHONE, null,
                 VALID_ADDRESS, VALID_CLASSCODE, VALID_TAGS);
-        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName());
+        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT,
+                Email.class.getSimpleName());
         Assert.assertThrows(IllegalValueException.class, expectedMessage, student::toModelType);
     }
 
@@ -103,7 +105,8 @@ public class JsonAdaptedStudentTest {
     public void toModelType_nullAddress_throwsIllegalValueException() {
         JsonAdaptedStudent student = new JsonAdaptedStudent(VALID_NAME, VALID_PHONE, VALID_EMAIL,
                 null, VALID_CLASSCODE, VALID_TAGS);
-        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT, Address.class.getSimpleName());
+        String expectedMessage = String.format(JsonAdaptedStudent.MISSING_FIELD_MESSAGE_FORMAT,
+                Address.class.getSimpleName());
         Assert.assertThrows(IllegalValueException.class, expectedMessage, student::toModelType);
     }
 

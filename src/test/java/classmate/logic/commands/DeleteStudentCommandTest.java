@@ -1,11 +1,11 @@
 package classmate.logic.commands;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static classmate.logic.commands.CommandTestUtil.assertCommandFailure;
 import static classmate.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static classmate.logic.commands.CommandTestUtil.showStudentAtIndex;
 import static classmate.testutil.TypicalStudents.getTypicalClassmate;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 

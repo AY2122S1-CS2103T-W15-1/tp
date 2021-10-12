@@ -1,13 +1,13 @@
 package classmate.logic.commands;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static classmate.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static classmate.testutil.TypicalStudents.CARL;
 import static classmate.testutil.TypicalStudents.ELLE;
 import static classmate.testutil.TypicalStudents.FIONA;
 import static classmate.testutil.TypicalStudents.getTypicalClassmate;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collections;

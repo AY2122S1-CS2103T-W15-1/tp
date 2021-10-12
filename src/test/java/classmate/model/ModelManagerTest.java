@@ -1,11 +1,10 @@
 package classmate.model;
 
+import static classmate.testutil.TypicalStudents.ALICE;
+import static classmate.testutil.TypicalStudents.BENSON;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static classmate.testutil.Assert.assertThrows;
-import static classmate.testutil.TypicalStudents.ALICE;
-import static classmate.testutil.TypicalStudents.BENSON;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,8 +15,8 @@ import org.junit.jupiter.api.Test;
 
 import classmate.commons.core.GuiSettings;
 import classmate.model.student.NameContainsKeywordsPredicate;
-import classmate.testutil.ClassmateBuilder;
 import classmate.testutil.Assert;
+import classmate.testutil.ClassmateBuilder;
 
 public class ModelManagerTest {
 

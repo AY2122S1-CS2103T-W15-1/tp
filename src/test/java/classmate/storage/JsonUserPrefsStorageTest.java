@@ -2,7 +2,6 @@ package classmate.storage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static classmate.testutil.Assert.assertThrows;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -14,8 +13,8 @@ import org.junit.jupiter.api.io.TempDir;
 
 import classmate.commons.core.GuiSettings;
 import classmate.commons.exceptions.DataConversionException;
-import classmate.testutil.Assert;
 import classmate.model.UserPrefs;
+import classmate.testutil.Assert;
 
 public class JsonUserPrefsStorageTest {
 

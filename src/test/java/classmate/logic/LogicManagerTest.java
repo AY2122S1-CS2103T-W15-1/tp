@@ -1,8 +1,7 @@
 package classmate.logic;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static classmate.testutil.Assert.assertThrows;
 import static classmate.testutil.TypicalStudents.AMY;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -76,8 +75,8 @@ public class LogicManagerTest {
         logic = new LogicManager(model, storage);
 
         // Execute add command
-        String addCommand = AddStudentCommand.COMMAND_WORD + CommandTestUtil.NAME_DESC_AMY + CommandTestUtil.PHONE_DESC_AMY + CommandTestUtil.EMAIL_DESC_AMY
-                + CommandTestUtil.ADDRESS_DESC_AMY;
+        String addCommand = AddStudentCommand.COMMAND_WORD + CommandTestUtil.NAME_DESC_AMY
+                + CommandTestUtil.PHONE_DESC_AMY + CommandTestUtil.EMAIL_DESC_AMY + CommandTestUtil.ADDRESS_DESC_AMY;
         Student expectedStudent = new StudentBuilder(AMY).withTags().build();
         ModelManager expectedModel = new ModelManager();
         expectedModel.addStudent(expectedStudent);
