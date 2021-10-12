@@ -3,7 +3,6 @@ package classmate.commons.util;
 import static java.util.Objects.requireNonNull;
 
 import classmate.MainApp;
-
 import javafx.scene.image.Image;
 
 /**

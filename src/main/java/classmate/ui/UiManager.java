@@ -4,8 +4,8 @@ import java.util.logging.Logger;
 
 import classmate.commons.core.LogsCenter;
 import classmate.commons.util.StringUtil;
-import classmate.logic.Logic;
 import classmate.MainApp;
+import classmate.logic.Logic;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

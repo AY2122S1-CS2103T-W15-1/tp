@@ -1,6 +1,5 @@
 package classmate.model.tag;
 
-import static classmate.commons.util.AppUtil.checkArgument;
 import static java.util.Objects.requireNonNull;
 
 import classmate.commons.util.AppUtil;

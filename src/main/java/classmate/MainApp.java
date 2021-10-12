@@ -14,21 +14,20 @@ import classmate.commons.util.StringUtil;
 import classmate.logic.Logic;
 import classmate.logic.LogicManager;
 import classmate.model.Classmate;
+import classmate.model.Model;
+import classmate.model.ModelManager;
 import classmate.model.ReadOnlyClassmate;
+import classmate.model.ReadOnlyUserPrefs;
+import classmate.model.UserPrefs;
+import classmate.model.util.SampleDataUtil;
+import classmate.storage.ClassmateStorage;
+import classmate.storage.JsonClassmateStorage;
 import classmate.storage.JsonUserPrefsStorage;
 import classmate.storage.Storage;
 import classmate.storage.StorageManager;
 import classmate.storage.UserPrefsStorage;
 import classmate.ui.Ui;
 import classmate.ui.UiManager;
-import classmate.model.Model;
-import classmate.model.ModelManager;
-import classmate.model.ReadOnlyUserPrefs;
-import classmate.model.UserPrefs;
-import classmate.model.util.SampleDataUtil;
-import classmate.storage.ClassmateStorage;
-import classmate.storage.JsonClassmateStorage;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 

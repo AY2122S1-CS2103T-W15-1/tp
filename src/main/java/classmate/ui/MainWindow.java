@@ -4,9 +4,9 @@ import java.util.logging.Logger;
 
 import classmate.commons.core.GuiSettings;
 import classmate.commons.core.LogsCenter;
+import classmate.logic.Logic;
 import classmate.logic.commands.CommandResult;
 import classmate.logic.commands.exceptions.CommandException;
-import classmate.logic.Logic;
 import classmate.logic.parser.exceptions.ParseException;
 import classmate.model.student.Student;
 import javafx.event.ActionEvent;

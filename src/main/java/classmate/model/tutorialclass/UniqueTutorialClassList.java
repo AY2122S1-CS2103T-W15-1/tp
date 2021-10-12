@@ -1,6 +1,5 @@
 package classmate.model.tutorialclass;
 
-import static classmate.commons.util.CollectionUtil.requireAllNonNull;
 import static java.util.Objects.requireNonNull;
 
 import java.util.Iterator;

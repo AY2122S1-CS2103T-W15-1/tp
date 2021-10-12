@@ -21,12 +21,12 @@ public class AddClassCommandParser implements Parser<AddClassCommand> {
     public AddClassCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(
-                        args, CliSyntax.PREFIX_CLASSCODE, CliSyntax.PREFIX_SCHEDULE,CliSyntax.PREFIX_TAG);
+                        args, CliSyntax.PREFIX_CLASSCODE, CliSyntax.PREFIX_SCHEDULE, CliSyntax.PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, CliSyntax.PREFIX_CLASSCODE, CliSyntax.PREFIX_SCHEDULE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(
-                    Messages.MESSAGE_INVALID_COMMAND_FORMAT,AddClassCommand.MESSAGE_USAGE));
+                    Messages.MESSAGE_INVALID_COMMAND_FORMAT, AddClassCommand.MESSAGE_USAGE));
         }
 
         ClassCode classCode = ParserUtil.parseClassCode(argMultimap.getValue(CliSyntax.PREFIX_CLASSCODE).get());

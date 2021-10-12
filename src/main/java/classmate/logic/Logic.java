@@ -10,7 +10,6 @@ import classmate.model.Model;
 import classmate.model.ReadOnlyClassmate;
 import classmate.model.student.Student;
 import classmate.model.tutorialclass.TutorialClass;
-
 import javafx.collections.ObservableList;
 
 /**

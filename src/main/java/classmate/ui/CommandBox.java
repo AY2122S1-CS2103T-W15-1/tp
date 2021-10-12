@@ -1,8 +1,8 @@
 package classmate.ui;
 
+import classmate.logic.Logic;
 import classmate.logic.commands.CommandResult;
 import classmate.logic.commands.exceptions.CommandException;
-import classmate.logic.Logic;
 import classmate.logic.parser.exceptions.ParseException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
