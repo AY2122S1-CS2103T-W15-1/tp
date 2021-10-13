@@ -6,7 +6,6 @@ import classmate.commons.core.GuiSettings;
 import classmate.logic.commands.CommandResult;
 import classmate.logic.commands.exceptions.CommandException;
 import classmate.logic.parser.exceptions.ParseException;
-import classmate.model.Model;
 import classmate.model.ReadOnlyClassmate;
 import classmate.model.student.Student;
 import classmate.model.tutorialclass.TutorialClass;
@@ -28,7 +27,7 @@ public interface Logic {
     /**
      * Returns the Classmate.
      *
-     * @see Model#getClassmate()
+     * @see classmate.model.Model#getClassmate()
      */
     ReadOnlyClassmate getClassmate();
 

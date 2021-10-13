@@ -13,7 +13,7 @@ Given below are my contributions to the project.
 
 * **Refactoring**:
     * Refactored Person to Student [\#93]()
-    * Refactored Address Book to ClassMATE [\#114]()
+    * Refactored Address Book to ClassMATE [\#115]()
 
 * **Documentation**:
     * Edited various documents to repurpose AddressBook into ClassMATE [\#78]()
