@@ -10,7 +10,7 @@ ClassMATE is a desktop application designed for instructors of the CS2101 Module
 Given below are my contributions to the project.
 
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2122s1.github.io/tp-dashboard/#breakdown=true&search=juliussneezer04)
-* **Enhancements Implemented**: 
+* **Enhancements Implemented**:
   * Allowing TutorialClasses to be stored easily in memory as a JSON list
     * Creating UniqueTutorialClassList.
     * Modifying JSON file storage structure to accommodate the list of Tutorial Classes.
@@ -44,7 +44,7 @@ Given below are my contributions to the project.
   * Set up and tracked Milestones 1.1, 1.2, 1.3, 1.4
   * Recorded Demo Videos for ClassMATE Demos.
 * **Review Contributions**:
-  * PRs reviewed (with non-trivial reviews) [\#155]([Update User Guide by GabrielWLM · Pull Request #155 · AY2122S1-CS2103T-W15-1/tp (github.com)](https://github.com/AY2122S1-CS2103T-W15-1/tp/pull/155)), 
+  * PRs reviewed (with non-trivial reviews) [\#155]([Update User Guide by GabrielWLM · Pull Request #155 · AY2122S1-CS2103T-W15-1/tp (github.com)](https://github.com/AY2122S1-CS2103T-W15-1/tp/pull/155)),
 
 <div style="page-break-after: always;"></div>
 
