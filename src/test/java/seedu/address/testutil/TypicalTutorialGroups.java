@@ -23,7 +23,7 @@ public class TypicalTutorialGroups {
     public static final TutorialGroup TUT_02 = new TutorialGroupBuilder().withClassCode(VALID_CLASSCODE_G02)
             .withGroupNumber(VALID_GROUPNUMBER_2).withGroupType(VALID_GROUPTYPE_OP2).build();
     public static final TutorialGroup TUT_03 = new TutorialGroupBuilder().withClassCode(VALID_CLASSCODE_G01)
-            .withGroupNumber(VALID_GROUPNUMBER_2).withGroupType(VALID_GROUPTYPE_OP1).build();
+            .withGroupNumber(VALID_GROUPNUMBER_1).withGroupType(VALID_GROUPTYPE_OP2).build();
 
     // Prevent instantiation
     private TypicalTutorialGroups() {}
@@ -40,7 +40,7 @@ public class TypicalTutorialGroups {
     }
 
     public static List<TutorialGroup> getTypicalTutorialGroups() {
-        return new ArrayList<>(Arrays.asList(TUT_01, TUT_02));
+        return new ArrayList<>(Arrays.asList(TUT_01, TUT_02, TUT_03));
     }
 
 }

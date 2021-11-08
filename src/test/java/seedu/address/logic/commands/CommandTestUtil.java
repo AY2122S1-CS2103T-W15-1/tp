@@ -66,9 +66,9 @@ public class CommandTestUtil {
     public static final TutorialGroup VALID_GROUP_G01_OP1 = new TutorialGroup(new GroupNumber("1"),
             new ClassCode("G01"), new GroupType("OP1"));
     public static final TutorialGroup VALID_GROUP_G06_OP1 = new TutorialGroup(new GroupNumber("3"),
-            new ClassCode("G01"), new GroupType("OP1"));
-    public static final TutorialGroup VALID_GROUP_G06_OP2 = new TutorialGroup(new GroupNumber("1"),
-            new ClassCode("G01"), new GroupType("OP1"));
+            new ClassCode("G06"), new GroupType("OP1"));
+    public static final TutorialGroup VALID_GROUP_G01_OP2 = new TutorialGroup(new GroupNumber("1"),
+            new ClassCode("G01"), new GroupType("OP2"));
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;

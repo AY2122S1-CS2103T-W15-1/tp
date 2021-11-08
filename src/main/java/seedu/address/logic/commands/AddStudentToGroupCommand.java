@@ -36,7 +36,7 @@ public class AddStudentToGroupCommand extends Command {
             + PREFIX_CLASSCODE + "G06 "
             + PREFIX_TYPE + "OP1 ";
 
-    public static final String MESSAGE_SUCCESS = "Index: %1$d added to Group: %2$s";
+    public static final String MESSAGE_SUCCESS = "Student added to Group: %1$s";
     public static final String MESSAGE_DUPLICATE_GROUP = "The student has already been added to an %1$s group";
     public static final String MESSAGE_NOT_SAME_CLASS = "The student and the tutorial group "
             + "do not belong to the same tutorial class";
@@ -86,7 +86,7 @@ public class AddStudentToGroupCommand extends Command {
         model.setStudent(studentToEdit, editedStudent);
         model.updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS);
 
-        return new CommandResult(String.format(MESSAGE_SUCCESS, index.getOneBased(), toAddTutorialGroup));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, toAddTutorialGroup));
     }
 
     public boolean isSameClass(Student student, TutorialGroup tutorialGroup) {
