@@ -11,7 +11,7 @@ Given below are my contributions to the project.
 
 * **Code contributed**: Check out my contributions [here](https://nus-cs2103-ay2122s1.github.io/tp-dashboard/)
 
-* **Enchancements Implemented**:
+* **Enhancements Implemented**:
     * New Feature: Added the ability to add tutorial classes:
         * PR [\#94](https://github.com/AY2122S1-CS2103T-W15-1/tp/pull/94),  [\#97](https://github.com/AY2122S1-CS2103T-W15-1/tp/pull/97)
         * Allows the user to create a tutorial class with a class code and schedule (and optional tags) so that

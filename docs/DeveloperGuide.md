@@ -415,26 +415,26 @@ Execution of the `AddMarkCommand`
 ### ClassCode Implementation Feature
 (Contributed by Zhou Yirui)
 
-ClassMATE allows user to assign student to a tutorial class using a ClassCode. A user is able to:
+ClassMATE allows user to assign a Student or a Tutorial Group to a Tutorial Class using a ClassCode. A user is able to:
 
 1. Add ClassCode to a student
 2. Edit ClassCode of a student
+3. Create Tutorial Group using ClassCode
+4. Create Tutorial Classes using ClassCode
 
 #### Current Implementation
 The class `ClassCode` facilitates all operations related to classCode. `ClassCode` is implemented such that a
 Tutorial Class with the corresponding ClassCode must exist before the ClassCode can be added. Tutorial Class `G00` is a
-default class that do not need to be created.
+default class that do not need to be created and is an empty ClassCode. It is assigned to a Student whose Tutorial Class has been deleted. 
 
 Given below is an example of how classCode can be used.
 
 Step 1: After launching the application for the first time, user executes `addstu n/Abigail p/91199119 e/ab@gmail.com a/Downling Park #15-20 c/G08`.
 The `addstu` command calls `Model#hasTutorialClass()`, and the model component checks if the TutorialClass specified by the
-class code exists. If it exists, the student is added successfully, else, an error message is given.
+class code exists. If it exists, the student is added successfully with the classCode parameter `G08`, else, an error message is given.
 
-
-#### Proposed Implementation
-Step 2: The user deletes TutorialClass G08 using the `deletec` command. The `deletec` command changes the ClassCode of all students
-of TutorialClass `G08` to `G00`.
+Step 2: The user deletes TutorialClass G08 using the `deletec c/G08` command. The `deletec` command changes the ClassCode of all students
+of TutorialClass `G08` to `G00`. On ClassMATE, the UI reflects the Student to have no Tutorial Class. 
 
 ### Tutorial Group Management Features
 This feature is split into two parts.
@@ -518,6 +518,39 @@ The *Sequence Diagram* below shows how `UniqueTutorialClassList` retrieves the
       Storing tutorial groups as arrays in JSON is less complicated.
     * Cons: Searching or filtering the list of tutorial groups by group types may take a longer time.
 
+
+#### Current Implementation (Adding/Removing Student from Tutorial Group)
+
+Each Student contains a `Set` of `TutorialGroup` they belong to. Tutorial Groups are stored internally as a `HashSet`. The `HashSet` of
+`TutorialGroup` is implemented such that there are no duplicate `TutorialGroup`, and each Student belongs to at most 1 `Tutorial Group` of 
+each Group Type. 
+
+ClassMATE will then support the following command classes:
+
+* `AddStudentToGroupCommand(Index index, TutorialGroup tutorialGroup)`
+* `DeleteStudentFromGroupCommand(Index index, TutorialGroup tutorialGroup)`
+
+Given below is an example of how the Add and Delete Student from Tutorial Groups features can be used:
+
+Step 1. The user launches the application for the first time. The existing set of `tutorialGroups` for each Student would be retrieved from the initial
+ClassMATE state, and would be displayed with the details the Student. 
+
+Step 2. The user enters `liststu` to list all the existing Students in ClassMATE
+
+Step 3. The user executes `addsg 1 gn/1 c/G06 type/OP1`. After the Command has been parsed, the `addsg` command calls `AddStudentToGroup#addTutorialGroup()`. 
+Subsequently, `Model#setStudent` and `Classmate#setStudent` are called consecutively to update the `tutorialGroups` of the Student.
+During the execution of `AddStudentToGroupCommand`, a new `Student` instance with the edited set of `TutorialGroup` is created.
+
+#### Design Considerations
+#### Aspect: Student parameters in the Command
+* Alternative 1 (current choice): Identifying the Student using Index. 
+    * Pros: Easier to implement. Less ambiguity arising from Students with the same names. 
+    * Cons: Adding/Deleting a Student from a Tutorial Group takes a longer time. Filtering the Student list may be necessary.
+    
+* Alternative 2: Identifying the Student using a Student ID. 
+    * Pros: Faster to perform the action of adding/deleting a Student from Tutorial Group. 
+    * Cons: Utility of Student ID is low as it is not used by other Commands. Also more difficult to implement.
+    
 ### Recommended workflow for setting up ClassMATE
 
 The *Activity Diagram* below provides an example of how users should set up their tutorial classes, tutorial groups and students
